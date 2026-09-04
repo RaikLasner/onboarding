@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Whitelabels — Onboarding</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #0a8a3f;
+      --green-dark: #06682f;
+      --green-soft: #e7f4ec;
+      --amber: #e39a3b;
+      --amber-soft: #fbf0dd;
+      --ink: #14231b;
+      --muted: #5b6b62;
+      --line: #e5ebe7;
+      --paper: #faf9f5;
+      --card: #ffffff;
+    }
+
+    .reveal {
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--ink);
+      font-size: 30px;
+      font-weight: 400;
+    }
+    .reveal .slides { text-align: left; }
+    .reveal .slides section { text-align: left; }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--ink);
+      text-transform: none;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      font-weight: 700;
+    }
+    .reveal h1 { font-size: 2.4em; }
+    .reveal h2 { font-size: 1.55em; margin: 0 0 0.5em; }
+    .reveal h3 { font-size: 0.9em; }
+    .reveal p, .reveal li { line-height: 1.45; }
+    .reveal strong { color: var(--green-dark); font-weight: 600; }
+    .reveal em { font-style: normal; color: var(--amber); font-weight: 600; }
+    .reveal ul { display: block; margin-left: 1em; }
+    .reveal li { margin-bottom: 0.4em; }
+    .reveal section { padding: 0 8px; }
+
+    /* Eyebrow / structural label */
+    .eyebrow {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5em; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--green);
+      display: flex; align-items: center; gap: 12px; margin-bottom: 0.7em;
+    }
+    .eyebrow::before {
+      content: ""; width: 34px; height: 3px; background: var(--green); border-radius: 2px;
+    }
+    .eyebrow.amber { color: var(--amber); }
+    .eyebrow.amber::before { background: var(--amber); }
+
+    .lead { font-size: 1.05em; color: var(--ink); }
+    .note { color: var(--muted); font-size: 0.62em; line-height: 1.5; }
+
+    /* ---------- Slide 1: title ---------- */
+    #cover { text-align: left; }
+    #cover .brand-mono {
+      font-family: "IBM Plex Mono", monospace; letter-spacing: 0.22em;
+      text-transform: uppercase; font-size: 0.46em; color: #bfe6cd;
+    }
+    #cover h1 { color: #fff; margin: 0.15em 0 0.35em; }
+    #cover .flow-motif {
+      font-family: "Space Grotesk", sans-serif; font-weight: 600;
+      color: #fff; font-size: 0.92em; display: inline-flex; align-items: center; gap: 16px;
+      background: rgba(255,255,255,0.12); padding: 10px 22px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+    #cover .flow-motif .ar { color: #ffd79a; }
+    #cover .sub { color: #d6efdf; font-size: 0.66em; margin-top: 1.1em; }
+
+    /* ---------- Contrast cards ---------- */
+    .contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 0.3em; }
+    .ccard { border-radius: 18px; padding: 30px 28px; border: 1px solid var(--line); background: var(--card); }
+    .ccard.g { background: var(--green); border-color: var(--green); color: #fff; }
+    .ccard.g h3, .ccard.g .flow { color: #fff; }
+    .ccard .tag { font-family:"IBM Plex Mono",monospace; font-size:0.5em; letter-spacing:0.14em; text-transform:uppercase; color: var(--muted); }
+    .ccard.g .tag { color: #bfe6cd; }
+    .ccard .flow {
+      font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:1.35em;
+      margin:0.25em 0 0.4em; display:flex; align-items:center; gap:12px;
+    }
+    .ccard .flow .ar { color: var(--amber); }
+    .ccard.g .flow .ar { color: #ffd79a; }
+    .ccard p { font-size: 0.62em; margin: 0; line-height: 1.5; }
+    .ccard.g p { color: #eafaf0; }
+    .shift {
+      margin-top: 1em; font-size: 0.6em; color: var(--muted);
+      background: var(--amber-soft); border-left: 4px solid var(--amber);
+      padding: 12px 18px; border-radius: 0 10px 10px 0;
+    }
+
+    /* ---------- Two column boxes ---------- */
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    .box { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px 26px; height: 100%; box-sizing: border-box; }
+    .box.g { background: var(--green-soft); border-color: #cfe8d8; }
+    .box h3 { margin: 0 0 0.5em; display:flex; align-items:center; gap:10px; }
+    .box .ic { font-size: 0.9em; }
+    .box ul { margin: 0; font-size: 0.78em; }
+
+    /* ---------- Steps ---------- */
+    .steps { display: grid; gap: 14px; margin-top: 0.2em; }
+    .step {
+      display: grid; grid-template-columns: 52px 1fr; align-items: center; gap: 18px;
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 20px;
+      font-size: 0.8em;
+    }
+    .step .n {
+      width: 48px; height: 48px; border-radius: 14px; background: var(--green-soft);
+      color: var(--green-dark); font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:1.1em;
+      display:flex; align-items:center; justify-content:center;
+    }
+
+    /* ---------- Brand tiles ---------- */
+    .brands { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 0.2em; }
+    .tile {
+      position: relative; border-radius: 14px; overflow: hidden; height: 132px;
+      border: 1px solid var(--line); background: var(--card); display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .tile.shot::before {
+      content:""; position:absolute; inset:0; background-size: cover; background-position: top center;
+    }
+    .tile.shot::after {
+      content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(20,35,27,0) 30%, rgba(20,35,27,0.82) 100%);
+    }
+    .tile.s-ausde::before { background-image: url("auspreiser.png"); }
+    .tile.s-kfz::before   { background-image: url("kfzteile.png"); }
+    .tile.s-fashion::before { background-image: url("purefashion.png"); }
+
+    .tile .body { position: relative; z-index: 2; padding: 12px 14px; }
+    .tile .mono {
+      position:absolute; top:12px; left:14px; z-index:2; width:38px; height:38px; border-radius:11px;
+      display:flex; align-items:center; justify-content:center; font-family:"Space Grotesk",sans-serif;
+      font-weight:700; font-size:0.62em; color:#fff;
+    }
+    .tile .flag { position:absolute; top:14px; right:14px; z-index:2; font-size:0.8em; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25)); }
+    .tile .dom { font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:0.56em; }
+    .tile .vert { font-size:0.44em; opacity:0.9; margin-top:2px; }
+    /* solid tiles (no screenshot) — text dark on soft bg */
+    .tile.solid { background: var(--paper); }
+    .tile.solid .dom { color: var(--ink); }
+    .tile.solid .vert { color: var(--muted); }
+    /* screenshot tiles — text light over gradient */
+    .tile.shot .dom, .tile.shot .vert { color: #fff; }
+    .tile.flag-brand { border: 2px solid var(--green); }
+    .tile .star { position:absolute; z-index:2; bottom:12px; right:14px; color: var(--amber); font-size:0.7em; }
+
+    /* ---------- Chart ---------- */
+    .chart { margin-top: 0.3em; }
+    .legend { display:flex; gap:22px; font-size:0.5em; color:var(--muted); margin-bottom: 14px; font-family:"IBM Plex Mono",monospace; }
+    .legend span { display:inline-flex; align-items:center; gap:7px; }
+    .legend .sw { width:14px; height:14px; border-radius:4px; display:inline-block; }
+    .legend .sw.g { background: var(--green); }
+    .legend .sw.a { background: var(--amber); }
+    .bars { display: grid; gap: 11px; }
+    .row { display: grid; grid-template-columns: 190px 1fr; align-items: center; gap: 16px; }
+    .row .lbl { font-size: 0.5em; font-weight:600; text-align: right; }
+    .row .lbl .cc { display:block; font-size:0.82em; font-weight:400; color: var(--muted); font-family:"IBM Plex Mono",monospace; }
+    .stack { display:grid; gap:5px; }
+    .bar { height: 15px; border-radius: 0 5px 5px 0; position: relative; min-width: 2px; }
+    .bar.g { background: var(--green); }
+    .bar.a { background: var(--amber); }
+    .bar .v { position:absolute; right:-8px; top:50%; transform: translate(100%,-50%); font-family:"IBM Plex Mono",monospace; font-size:0.42em; color: var(--muted); white-space:nowrap; }
+    .row.hi .lbl { color: var(--green-dark); }
+
+    /* ---------- Team ---------- */
+    .team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 0.3em; }
+    .member { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; text-align: center; }
+    .member svg { width: 62px; height: 62px; display:block; margin: 0 auto 10px; }
+    .member .name { font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:0.6em; }
+    .member .role { font-size:0.46em; color: var(--muted); margin-top: 3px; }
+
+    /* ---------- Growth ---------- */
+    .grow { display:flex; align-items:center; gap:28px; margin: 0.3em 0 0.9em; }
+    .gnum { text-align:center; }
+    .gnum b { font-family:"Space Grotesk",sans-serif; font-size:2.6em; line-height:1; color: var(--green); display:block; }
+    .gnum.future b { color: var(--amber); }
+    .gnum span { font-family:"IBM Plex Mono",monospace; font-size:0.46em; letter-spacing:0.1em; text-transform:uppercase; color: var(--muted); }
+    .grow .track { flex:1; height:8px; border-radius:5px; background: linear-gradient(90deg, var(--green), var(--amber)); position:relative; }
+    .grow .track::after { content:"→"; position:absolute; right:-4px; top:-13px; color:var(--amber); font-size:1.1em; }
+    .protos { display:grid; grid-template-columns: repeat(3,1fr); gap:16px; }
+    .proto { border:1px solid var(--line); border-radius:14px; overflow:hidden; background: var(--card); }
+    .proto img { width:100%; height:118px; object-fit: cover; object-position: top; display:block; }
+    .proto .cap { padding:10px 14px; font-size:0.48em; }
+    .proto .cap b { font-family:"Space Grotesk",sans-serif; display:block; color: var(--ink); }
+    .proto .cap span { color: var(--muted); }
+
+    /* ---------- Mottos ---------- */
+    .mottos { display:grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .motto img { width:100%; height: 300px; object-fit: cover; border-radius: 18px; }
+    .motto .q { font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:0.82em; margin-top: 0.6em; color: var(--ink); }
+    .motto .s { color: var(--muted); font-size: 0.56em; line-height:1.45; margin-top: 0.3em; }
+
+    /* utilities */
+    .reveal .slide-number { background: var(--green); }
+    .foot { position: fixed; bottom: 16px; left: 26px; font-family:"IBM Plex Mono",monospace; font-size: 12px; color: #9aa8a0; z-index: 30; letter-spacing:0.06em; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal .slides section { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- 1. Cover -->
+    <section id="cover" data-background-gradient="linear-gradient(135deg, #06682f 0%, #0a8a3f 60%, #12a24c 100%)">
+      <div class="brand-mono">idealo · Panther Holding</div>
+      <h1>The Whitelabels</h1>
+      <div class="flow-motif">Query <span class="ar">→</span> Offers <span class="ar">→</span> Reach</div>
+      <p class="sub">Onboarding · a 15-minute overview</p>
+      <aside class="notes">
+        Welcome. In 15 minutes you'll have a mental model of what the Whitelabels
+        are, why they exist, how they work, who's on the team and where we're headed.
+      </aside>
+    </section>
+
+    <!-- 2. What is a Whitelabel -->
+    <section>
+      <div class="eyebrow">01 · The idea</div>
+      <h2>What is a Whitelabel?</h2>
+      <ul>
+        <li>We run <strong>alternative price-comparison platforms</strong>, operated by idealo through its subsidiary <strong>Panther Holding</strong>.</li>
+        <li>We market idealo's and the merchants' inventory under <em>other brands</em>.</li>
+        <li>We operate in the same countries as idealo — multiple brands across
+          <strong>Germany, Spain, France, the UK, Italy and Austria</strong>.</li>
+      </ul>
+      <aside class="notes">
+        Same underlying marketplace, presented under different brands and domains.
+        We're part of idealo, not a competitor to it.
+      </aside>
+    </section>
+
+    <!-- 3. Core difference -->
+    <section>
+      <div class="eyebrow">02 · The mental model</div>
+      <h2>The core difference vs. idealo</h2>
+      <div class="contrast">
+        <div class="ccard">
+          <div class="tag">idealo</div>
+          <div class="flow">Product <span class="ar">→</span> Offers</div>
+          <p>The <strong>product</strong> is the central entity — content, SEO and marketing build on it. A user searches "iPhone 16" and lands on a product page.</p>
+        </div>
+        <div class="ccard g">
+          <div class="tag">Whitelabels</div>
+          <div class="flow">Query <span class="ar">→</span> Offers</div>
+          <p>Users traditionally search <strong style="color:#fff;">generic terms</strong> — e.g. "cheap smartphones" — and land on a query page. E.g. auspreiser.de → "Smartphones günstig".</p>
+        </div>
+      </div>
+      <div class="shift">→ Our strategy is increasingly moving <em>toward stronger product orientation</em>.</div>
+      <aside class="notes">
+        The single most important thing to remember. idealo is product-first;
+        the whitelabels were query-first — and that line is now blurring.
+      </aside>
+    </section>
+
+    <!-- 4. Why -->
+    <section>
+      <div class="eyebrow">03 · The rationale</div>
+      <h2>Why do we do this?</h2>
+      <p class="lead"><strong>More domains = more reach &amp; more market share.</strong></p>
+      <ul>
+        <li>Occupy <em>additional positions</em> in classic Google search — and displace competitors.</li>
+        <li>Generic keywords are often <em>cheaper</em> than heavily-contested product keywords.</li>
+        <li>Lower volume each, but a <em>huge variety</em> of queries → comparable traffic overall, sometimes at lower acquisition cost.</li>
+      </ul>
+      <aside class="notes">
+        A different business model: many cheap, low-volume generic queries add up
+        to serious traffic — a volume game, not fighting over the same expensive keywords.
+      </aside>
+    </section>
+
+    <!-- 5. Complement -->
+    <section>
+      <div class="eyebrow">04 · Where it fits</div>
+      <h2>A complement to idealo</h2>
+      <p class="note" style="margin-bottom:1em;">Not every category works well in a strict product structure — especially where products…</p>
+      <div class="cols">
+        <div class="box">
+          <h3><span class="ic">🧩</span> …are hard to structure</h3>
+          <ul>
+            <li>no common identifier like an <strong>EAN</strong></li>
+            <li>hard to consolidate unambiguously</li>
+            <li>searched less by brand / specific product</li>
+          </ul>
+        </div>
+        <div class="box g">
+          <h3><span class="ic">🎯</span> Typical examples</h3>
+          <ul>
+            <li>Textiles &amp; fashion</li>
+            <li>DIY &amp; hardware</li>
+            <li>Auto parts</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note" style="margin-top:1em;">Built to cover the <em>long tail</em> — now shifting from query-based toward a more product-oriented model.</p>
+    </section>
+
+    <!-- 6. How it works -->
+    <section>
+      <div class="eyebrow">05 · The mechanics</div>
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div>A merchant signs a contract with <strong>idealo</strong>.</div></div>
+        <div class="step"><div class="n">2</div><div>The merchant delivers its <strong>inventory</strong> to idealo.</div></div>
+        <div class="step"><div class="n">3</div><div>The offers become available in <strong>search</strong> automatically.</div></div>
+        <div class="step"><div class="n">4</div><div>At idealo, each offer is additionally <strong>mapped to a product</strong>.</div></div>
+      </div>
+      <p class="note" style="margin-top:0.9em;">We have essentially the same merchant inventory as idealo — unless a merchant opts out. Offers reach us via idealo's systems, not directly.</p>
+    </section>
+
+    <!-- 7. Ours vs shared -->
+    <section>
+      <div class="eyebrow">06 · Ownership</div>
+      <h2>What's ours vs. what's shared</h2>
+      <p class="note" style="margin:-0.4em 0 1em;">We look independent from the outside — but we're deeply integrated into idealo's infrastructure.</p>
+      <div class="cols">
+        <div class="box">
+          <h3><span class="ic">✎</span> We own</h3>
+          <ul>
+            <li>Our own frontends / platforms</li>
+            <li>Content</li>
+            <li>Marketing feeds</li>
+            <li>Parts of our cloud infrastructure</li>
+            <li>Our own products &amp; brands</li>
+          </ul>
+        </div>
+        <div class="box g">
+          <h3><span class="ic">⇄</span> Shared with idealo</h3>
+          <ul>
+            <li>Merchant offers</li>
+            <li>Search infrastructure</li>
+            <li>Cloud infrastructure</li>
+            <li>Central services &amp; platform components</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Brands -->
+    <section>
+      <div class="eyebrow">07 · The portfolio</div>
+      <h2>The brands — 2025: 8 Whitelabels</h2>
+      <div class="brands">
+        <div class="tile shot s-ausde flag-brand">
+          <span class="mono" style="background:#0a8a3f;">a</span><span class="flag">🇩🇪</span>
+          <div class="body"><div class="dom">auspreiser.de</div><div class="vert">general · flagship</div></div>
+          <span class="star">★</span>
+        </div>
+        <div class="tile solid">
+          <span class="mono" style="background:#c0392b;">a</span><span class="flag">🇦🇹</span>
+          <div class="body"><div class="dom">auspreiser.at</div><div class="vert">general</div></div>
+        </div>
+        <div class="tile solid">
+          <span class="mono" style="background:#e67e22;">c</span><span class="flag">🇪🇸</span>
+          <div class="body"><div class="dom">comparar.net</div><div class="vert">general</div></div>
+        </div>
+        <div class="tile solid">
+          <span class="mono" style="background:#2980b9;">p</span><span class="flag">🇫🇷</span>
+          <div class="body"><div class="dom">prix.net</div><div class="vert">general</div></div>
+        </div>
+        <div class="tile solid">
+          <span class="mono" style="background:#16a085;">p</span><span class="flag">🇮🇹</span>
+          <div class="body"><div class="dom">prezzo.org</div><div class="vert">general</div></div>
+        </div>
+        <div class="tile solid">
+          <span class="mono" style="background:#8e44ad;">p</span><span class="flag">🇬🇧</span>
+          <div class="body"><div class="dom">pricehunter.co.uk</div><div class="vert">general</div></div>
+        </div>
+        <div class="tile shot s-fashion">
+          <span class="mono" style="background:#d81b60;">p</span><span class="flag">🇩🇪</span>
+          <div class="body"><div class="dom">purefashion.de</div><div class="vert">fashion</div></div>
+        </div>
+        <div class="tile shot s-kfz">
+          <span class="mono" style="background:#34495e;">k</span><span class="flag">🇩🇪</span>
+          <div class="body"><div class="dom">kfzteile.net</div><div class="vert">auto parts</div></div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:0.8em;">Mostly general price-comparison brands, plus a few vertical specialists (fashion, auto parts).</p>
+      <aside class="notes">
+        Eight live brands in 2025. auspreiser.de is by far the largest — our
+        flagship. Tiles with a photo are the ones we have live screenshots of.
+      </aside>
+    </section>
+
+    <!-- 9. Chart -->
+    <section>
+      <div class="eyebrow amber">08 · Scale in 2025</div>
+      <h2>2025 in numbers</h2>
+      <div class="chart">
+        <div class="legend">
+          <span><i class="sw g"></i> Lead-ins (visits in)</span>
+          <span><i class="sw a"></i> Clickouts (sent to merchants)</span>
+        </div>
+        <div class="bars">
+          <div class="row hi">
+            <div class="lbl">auspreiser.de ★<span class="cc">🇩🇪 general</span></div>
+            <div class="stack">
+              <div class="bar g" style="width:100%"><span class="v">32.0M</span></div>
+              <div class="bar a" style="width:70.6%"><span class="v">22.6M</span></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="lbl">prix.net<span class="cc">🇫🇷 general</span></div>
+            <div class="stack">
+              <div class="bar g" style="width:41.6%"><span class="v">13.3M</span></div>
+              <div class="bar a" style="width:20.6%"><span class="v">6.6M</span></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="lbl">comparar.net<span class="cc">🇪🇸 general</span></div>
+            <div class="stack">
+              <div class="bar g" style="width:20.8%"><span class="v">6.7M</span></div>
+              <div class="bar a" style="width:10.9%"><span class="v">3.5M</span></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="lbl">auspreiser.at<span class="cc">🇦🇹 general</span></div>
+            <div class="stack">
+              <div class="bar g" style="width:20.3%"><span class="v">6.5M</span></div>
+              <div class="bar a" style="width:12.3%"><span class="v">3.9M</span></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="lbl">prezzo.org<span class="cc">🇮🇹 general</span></div>
+            <div class="stack">
+              <div class="bar g" style="width:16.7%"><span class="v">5.3M</span></div>
+              <div class="bar a" style="width:8.1%"><span class="v">2.6M</span></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="lbl">purefashion.de<span class="cc">🇩🇪 fashion</span></div>
+            <div class="stack">
+              <div class="bar g" style="width:13.9%"><span class="v">4.4M</span></div>
+              <div class="bar a" style="width:10.4%"><span class="v">3.3M</span></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="lbl">pricehunter.co.uk<span class="cc">🇬🇧 general</span></div>
+            <div class="stack">
+              <div class="bar g" style="width:10.3%"><span class="v">3.3M</span></div>
+              <div class="bar a" style="width:5.6%"><span class="v">1.8M</span></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="lbl">kfzteile.net<span class="cc">🇩🇪 auto parts</span></div>
+            <div class="stack">
+              <div class="bar g" style="width:7.1%"><span class="v">2.3M</span></div>
+              <div class="bar a" style="width:4.4%"><span class="v">1.4M</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:0.9em;"><strong>Lead-in</strong> = a visit coming in · <strong>Clickout</strong> = a visitor sent onward to a merchant shop (how we earn). auspreiser.de is the clear flagship.</p>
+      <aside class="notes">
+        Don't memorize numbers — note the scale and that auspreiser.de dwarfs the
+        rest. Clickouts are where the money is: that's a user we handed to a merchant.
+      </aside>
+    </section>
+
+    <!-- 10. Team -->
+    <section>
+      <div class="eyebrow">09 · The people</div>
+      <h2>Who's behind it — a small team</h2>
+      <div class="team">
+        <div class="member">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#0a8a3f"/><text x="32" y="42" font-family="Space Grotesk, sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">×3</text></svg>
+          <div class="name">Developers</div><div class="role">Engineering</div>
+        </div>
+        <div class="member">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#e39a3b"/><text x="32" y="42" font-family="Space Grotesk, sans-serif" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">PO</text></svg>
+          <div class="name">Product Owner</div><div class="role">Product · Team Lead</div>
+        </div>
+        <div class="member">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#2980b9"/><text x="32" y="42" font-family="Space Grotesk, sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">F</text></svg>
+          <div class="name">François</div><div class="role">Head of Whitelabels</div>
+        </div>
+        <div class="member">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#d81b60"/><text x="32" y="42" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">E·V</text></svg>
+          <div class="name">Emeline &amp; Vero</div><div class="role">Content</div>
+        </div>
+        <div class="member">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#16a085"/><text x="32" y="42" font-family="Space Grotesk, sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">J</text></svg>
+          <div class="name">Jorge</div><div class="role">Team</div>
+        </div>
+        <div class="member">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#8e44ad"/><text x="32" y="42" font-family="Space Grotesk, sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">J</text></svg>
+          <div class="name">Jan</div><div class="role">SEO · ~50%</div>
+        </div>
+        <div class="member">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#c0392b"/><text x="32" y="42" font-family="Space Grotesk, sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">C</text></svg>
+          <div class="name">Carlo</div><div class="role">Display · part-time</div>
+        </div>
+        <div class="member" style="display:flex; flex-direction:column; align-items:center; justify-content:center; background:var(--green-soft); border-color:#cfe8d8;">
+          <div class="name" style="font-size:0.72em; color:var(--green-dark);">Small team</div>
+          <div class="role" style="margin-top:6px;">focused · pragmatic · fast</div>
+        </div>
+      </div>
+      <aside class="notes">
+        A deliberately small team. That's why we work focused, pragmatic and fast.
+      </aside>
+    </section>
+
+    <!-- 11. AI -->
+    <section>
+      <div class="eyebrow">10 · Focus 1 of 2</div>
+      <h2>AI Transformation</h2>
+      <div class="cols" style="grid-template-columns: 1.3fr 1fr; align-items:center;">
+        <div>
+          <p style="margin-top:0;">We want our systems to be:</p>
+          <ul>
+            <li>more strongly <em>automated</em>,</li>
+            <li><em>leaner</em> to operate,</li>
+            <li>structurally <strong>AI-ready</strong>.</li>
+          </ul>
+        </div>
+        <div class="box g">
+          <p style="font-size:0.68em; margin:0; color:var(--green-dark);">AI shouldn't just be an extra feature — it should become <strong>part of how we work</strong> and part of our technical platform.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Growth -->
+    <section>
+      <div class="eyebrow amber">11 · Focus 2 of 2</div>
+      <h2>Growth &amp; Expansion</h2>
+      <div class="grow">
+        <div class="gnum"><b>8</b><span>2025</span></div>
+        <div class="track"></div>
+        <div class="gnum future"><b>16</b><span>target · end 2027</span></div>
+      </div>
+      <p class="note" style="margin:0 0 0.7em;">New-domain prototypes already in the pipeline:</p>
+      <div class="protos">
+        <div class="proto"><img src="electronicanga.png" alt="electronicaganga"><div class="cap"><b>electronicaganga</b><span>🇪🇸 electronics</span></div></div>
+        <div class="proto"><img src="lamaison.png" alt="lamaison-lejardin"><div class="cap"><b>lamaison-lejardin</b><span>🇫🇷 home &amp; garden</span></div></div>
+        <div class="proto"><img src="meilleur-prix-epicerie.png" alt="meilleur-prix-epicerie"><div class="cap"><b>meilleur-prix-epicerie</b><span>🇫🇷 groceries</span></div></div>
+      </div>
+      <aside class="notes">
+        The goal is to double the portfolio. These three prototypes are proof the
+        model scales into new verticals and markets.
+      </aside>
+    </section>
+
+    <!-- 13. Mottos -->
+    <section>
+      <div class="eyebrow">12 · The mindset</div>
+      <h2>Two mottos to remember</h2>
+      <div class="mottos">
+        <div class="motto">
+          <img src="cashcow.webp" alt="cash cow in a field">
+          <div class="q">"Better be a cash cow than a poor dog."</div>
+          <div class="s">We don't have to be the most glamorous product — we create sustainable value, efficiently.</div>
+        </div>
+        <div class="motto">
+          <img src="Good enough to move, smart enough to improve.jpg" alt="paper jet">
+          <div class="q">"Good enough to move, smart enough to improve."</div>
+          <div class="s">Stay small, agile and lightweight: decide fast, test fast, adapt fast.</div>
+        </div>
+      </div>
+      <aside class="notes">
+        These two lines capture the mindset: be a reliable cash cow, and ship fast
+        while staying smart enough to keep improving. Welcome aboard.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<div class="foot">The Whitelabels · Onboarding</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.055,
+    plugins: [ RevealNotes ]
+  });
+</script>
+</body>
+</html>

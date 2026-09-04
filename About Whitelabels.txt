@@ -1,0 +1,158 @@
+## Was ist ein Whitelabel?
+
+* Wir betreiben alternative Preisvergleichsplattformen, die von idealo über die Tochtergesellschaft **Panther Holding** betrieben werden.
+* Wir vermarkten das idealo- bzw. Händlerinventar unter anderen Marken.
+* Wir operieren in denselben Ländern wie idealo und betreiben mehrere Brands in **Deutschland, Spanien, Frankreich, Großbritannien, Italien und Österreich**.
+
+## Was ist anders als bei idealo?
+
+* Wir haben keine eigene Produktwelt wie idealo.
+* Bei idealo ist das **Produkt die zentrale Entität**, auf der Content, SEO und Vermarktung aufbauen. Diese Produktorientierung ist ein wesentlicher Erfolgsfaktor von idealo.
+* Ein idealo-Nutzer sucht häufig nach einem konkreten Produkt, zum Beispiel **„iPhone 16“**, und landet auf einer Kategorie- oder Produktseite.
+
+Beispiele:
+
+* Kategorie: iPhone 16
+
+* Produktseite: Apple iPhone 16
+
+* Bei den Whitelabels suchen Nutzer dagegen traditionell häufiger nach **generischen Suchbegriffen**, zum Beispiel **„Smartphones günstig“**, und landen auf einer Query-Seite.
+
+Beispiel:
+
+* auspreiser.de → „Smartphones günstig“
+
+Der zentrale Unterschied ist also:
+
+**idealo: Produkt → Angebote**
+**Whitelabels: Query → Angebote**
+
+Unsere Strategie entwickelt sich allerdings zunehmend in Richtung einer stärkeren **Produktorientierung**.
+
+---
+
+## Warum machen wir das?
+
+Der Grundgedanke ist relativ einfach:
+
+**Mehr Domains bedeuten mehr Reichweite und mehr Marktanteil.**
+
+Zum Beispiel können wir dadurch zusätzliche Positionen in der klassischen Google-Suche besetzen und gleichzeitig Wettbewerber verdrängen.
+
+### Ein anderes Geschäftsmodell
+
+Generische Keywords sind häufig günstiger als stark umkämpfte Produktkeywords.
+
+Sie haben einzeln zwar oft ein geringeres Suchvolumen, lassen sich aber in sehr vielen unterschiedlichen Varianten ausspielen. Durch diese große Anzahl an Suchanfragen können wir insgesamt ein vergleichbares Traffic-Niveau erreichen – teilweise zu niedrigeren Akquisitionskosten.
+
+### Ergänzung zu idealo
+
+Nicht alle Kategorien funktionieren besonders gut über eine klassische Produktstruktur.
+
+Das gilt zum Beispiel für Bereiche, in denen Produkte:
+
+* keinen gemeinsamen Identifier wie eine EAN haben,
+* schwer eindeutig zusammenzufassen sind,
+* oder weniger stark über Marken und konkrete Produkte gesucht werden.
+
+Beispiele sind:
+
+* Textilien
+* Baumarktartikel
+* Kfz-Zubehör
+
+Die Whitelabels waren deshalb traditionell auch als **Ergänzung zu idealo** gedacht, um insbesondere den Longtail abzudecken.
+
+Aktuell verändert sich unsere Strategie allerdings:
+Wir bewegen uns zunehmend **von einem Query-basierten Modell hin zu einem stärker produktorientierten Modell**.
+
+---
+
+## Wie funktioniert das?
+
+Vereinfacht sieht der Ablauf so aus:
+
+1. Ein Händler schließt einen Vertrag mit idealo.
+2. Der Händler liefert sein Inventar an idealo.
+3. Die Angebote werden automatisch in der Suche verfügbar.
+4. Bei idealo wird das Angebot zusätzlich einem konkreten Produkt zugeordnet.
+
+Grundsätzlich verfügen wir über das gleiche Händlerinventar wie idealo – sofern ein Händler der Nutzung durch die Whitelabels nicht widerspricht.
+
+---
+
+## Was ist individuell und was ist standardisiert?
+
+Nach außen wirken die Whitelabels relativ eigenständig. Technisch sind wir jedoch stark in die idealo-Infrastruktur integriert.
+
+### Was wir selbst verantworten
+
+* eigenes Frontend / eigene Preisvergleichsplattformen
+* Content
+* Marketing-Feeds
+* Teile unserer Cloud-Infrastruktur
+* Weiterentwicklung unserer eigenen Produkte und Brands
+
+### Was wir gemeinsam mit idealo nutzen
+
+* Händlerangebote
+* Suchinfrastruktur
+* Cloud-Infrastruktur
+* verschiedene zentrale Services und Plattformkomponenten
+
+Die Händlerangebote kommen also nicht direkt zu uns, sondern werden über die idealo-Systeme verarbeitet und anschließend von uns genutzt.
+
+---
+
+## Wer hängt alles dran?
+
+Wir sind ein relativ kleines Team.
+
+### Kernteam
+
+* **3 Entwickler**
+* **ich:** Product Owner und Team Lead
+* **François:** Head of Whitelabels
+* **Emeline & Vero:** Content
+* **Jorge**
+* **Jan:** SEO, ca. 50 %
+* **Carlo:** Display, Teilzeit
+
+Gerade weil wir ein kleines Team sind, müssen wir sehr fokussiert, pragmatisch und schnell arbeiten.
+
+---
+
+## Was beschäftigt uns aktuell?
+
+### 1. AI Transformation
+
+Wir wollen unsere Systeme:
+
+* stärker automatisieren,
+* effizienter betreiben,
+* und strukturell **AI-ready** machen.
+
+AI soll dabei nicht nur ein zusätzliches Feature sein, sondern zunehmend Teil unserer Arbeitsweise und unserer technischen Plattform werden.
+
+### 2. Wachstum und Expansion
+
+Wir wollen deutlich wachsen und weitere Märkte bzw. Brands erschließen.
+
+Unsere Entwicklung:
+
+**2025: 8 Whitelabels**
+**Ziel Ende 2027: 16 Whitelabels**
+
+Damit wollen wir unsere Reichweite erhöhen und das Modell stärker skalieren.
+
+---
+
+## Zwei Merksätze für Whitelabels
+
+**„Better be a cash cow than a poor dog.“**
+
+Wir müssen nicht immer das glamouröseste Produkt sein. Entscheidend ist, dass wir effizient arbeiten und nachhaltig Wert schaffen.
+
+**„Good enough to move, smart enough to improve“**
+
+Wir wollen klein, agil und leichtgewichtig bleiben: schnell entscheiden, schnell testen und schnell auf Veränderungen reagieren.
